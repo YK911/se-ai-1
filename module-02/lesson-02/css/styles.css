@@ -1,0 +1,41 @@
+/* #region Base */
+a {
+  text-decoration: none;
+}
+/* #endregion */
+
+/* #region Hero */
+.hero {
+}
+.hero-title {
+}
+.hero-btn {
+}
+.hero-link {
+}
+.hero-link-icon {
+}
+/* #endregion */
+
+.menu-link {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
+  transition: 250ms;
+}
+.menu-link:hover,
+.menu-link:focus {
+  color: orangered;
+}
+
+h1 {
+  --light-cl: 164 255 255;
+  background-color: #663399;
+  color: rgb(var(--light-cl) / 10%);
+  color: rgb(var(--light-cl));
+}
+
+/* .menu-link:active {
+  color: rebeccapurple;
+  transform: scale(0.96);
+} */
