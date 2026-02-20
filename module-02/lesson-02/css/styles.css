@@ -1,41 +1,122 @@
+/* @font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf");
+} */
+
 /* #region Base */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #111111;
+  background-color: #fafafa;
+
+  /* font-weight: 400; */
+}
 a {
   text-decoration: none;
+  color: currentColor;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+img {
+  display: block;
+}
+/* #endregion */
+
+/* #region Common */
+.visually-hidden,
+.read-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+/* #endregion */
+
+/* #region Logo */
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.logo-icon {
+}
+/* #endregion */
+
+/* #region Menu */
+.menu {
+}
+.menu-item {
+}
+.menu-link {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.menu-link:hover,
+.menu-link:focus {
+  color: #fd9222;
+}
+/* #endregion */
+
+/* #region Socials */
+.socials {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+}
+/* #endregion */
+
+/* #region Header */
+.header {
+}
+.header-nav {
+}
+.header-logo {
+}
+.header-nav-menu {
 }
 /* #endregion */
 
 /* #region Hero */
 .hero {
+  background: rgba(17, 17, 17, 0.4);
 }
 .hero-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  color: #fff;
 }
 .hero-btn {
 }
 .hero-link {
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
+  color: #fff;
 }
 .hero-link-icon {
 }
 /* #endregion */
-
-.menu-link {
-  font-family: sans-serif;
-  font-size: 20px;
-  color: black;
-  transition: 250ms;
-}
-.menu-link:hover,
-.menu-link:focus {
-  color: orangered;
-}
-
-h1 {
-  --light-cl: 164 255 255;
-  background-color: #663399;
-  color: rgb(var(--light-cl) / 10%);
-  color: rgb(var(--light-cl));
-}
-
-/* .menu-link:active {
-  color: rebeccapurple;
-  transform: scale(0.96);
-} */

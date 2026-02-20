@@ -14,6 +14,13 @@
       href="./images/icons/logo.svg"
       type="image/svg+xml"
     />
+    <!-- Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Critical CSS -->
     <!-- <style>
       header {
@@ -30,11 +37,12 @@
   </head>
   <body>
     <!-- #region Header -->
-    <header class="page-header" id="home">
-      <nav>
-        <a href="#">
+    <header class="header" id="home">
+      <nav class="header-nav">
+        <a class="header-logo logo" href="#">
           <i>Simply</i> Chocolate
           <img
+            class="logo-icon"
             src="./images/icons/logo.svg"
             alt="Simply Chocolate logo"
             width="24"
@@ -42,28 +50,30 @@
           />
         </a>
 
-        <ul class="nav-menu-list">
-          <li>
+        <ul class="header-nav-menu menu">
+          <li class="menu-item">
             <a class="menu-link" href="#home">Home</a>
           </li>
-          <li>
+          <li class="menu-item">
             <a class="menu-link" href="#made">How it’s made?</a>
           </li>
-          <li>
+          <li class="menu-item">
             <a class="menu-link current" href="#reviews">Chocolate is loved</a>
           </li>
         </ul>
       </nav>
 
-      <ul>
-        <li>
+      <ul class="socials">
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to facebook.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/facebook.svg"
               alt="icon 1"
               width="24"
@@ -71,14 +81,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to instagram.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/instagram.svg"
               alt="icon 2"
               width="24"
@@ -86,14 +98,16 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to twitter.com"
           >
             <img
+              class="socials-icon"
               src="./images/icons/twitter.svg"
               alt="icon 3"
               width="24"
@@ -128,7 +142,7 @@
       </section>
       <!-- Benefits section -->
       <section id="benefits">
-        <h2 class="section-title">Simply Chocolate benefits</h2>
+        <h2 class="visually-hidden">Simply Chocolate benefits</h2>
         <ul>
           <li>
             <h3>Unsurpassed taste</h3>
