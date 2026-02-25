@@ -1,0 +1,364 @@
+/* #region Variables */
+:root {
+  /* Fonts */
+  --primary-font: "Montserrat", sans-serif;
+  --secondary-font: serif;
+
+  /* Base colors */
+  --color-black: 17 17 17;
+  --color-white: 255 255 255;
+  --color-white-off: 250 250 250;
+  --color-gray: 76 76 76;
+  --color-gray-light: 236 237 237;
+  --color-light-cream: 252 241 224;
+  --color-purple: 30 24 35;
+  --color-accent: 253 146 34;
+
+  /* Semantic / Usage */
+  --cl-text-primary: rgb(var(--color-black));
+  --cl-text-primary--70: rgb(var(--color-black) / 70%);
+  --cl-text-secondary: rgb(var(--color-white));
+  --cl-text-secondary--70: rgb(var(--color-white) / 70%);
+  --cl-text-accent: rgb(var(--color-accent));
+
+  --cl-bg-light: rgb(var(--color-white));
+  --cl-bg-dark: rgb(var(--color-black));
+  --cl-bg-dark--10: rgb(var(--color-black) / 10%);
+  --cl-bg-dark--40: rgb(var(--color-black) / 40%);
+  --cl-bg-accent: rgb(var(--color-accent));
+  --cl-bg-surface-light: rgb(var(--color-white-off));
+  --cl-bg-surface-dark: rgb(var(--color-purple));
+
+  --cl-btn-accent-bg: rgb(var(--color-accent));
+  --cl-btn-accent-bg--20: rgb(var(--color-accent) / 20%);
+  --cl-btn-accent-text: rgb(var(--color-white));
+  --cl-btn-light-text: rgb(var(--color-white));
+  --cl-btn-dark-text: rgb(var(--color-dark));
+}
+/* #endregion */
+
+/* #region Base */
+body {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: var(--cl-text-primary);
+  background-color: var(--cl-bg-surface-light);
+}
+/* #endregion */
+
+/* #region Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+address {
+  font-style: normal;
+}
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
+img {
+  display: block;
+}
+/* #endregion */
+
+/* #region Common */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.accent-text {
+  color: var(--cl-text-accent);
+}
+.container {
+  max-width: 1168px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+.btn {
+  font-weight: 600;
+  color: #fff;
+  background-color: transparent;
+}
+.btn-accent {
+  background-color: var(--cl-btn-accent-bg);
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  color: var(--cl-text-accent);
+  background-color: var(--cl-btn-accent-bg--20);
+}
+
+.btn-light {
+}
+.btn-light:hover,
+.btn-light:focus {
+  color: #fd9222;
+}
+.btn-dark {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black, #111);
+}
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #fd9222;
+  color: #fff;
+}
+/* #endregion */
+
+/* #region Logo */
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.logo-icon {
+}
+/* #endregion */
+
+/* #region Socials */
+.socials {
+}
+.socials-dark {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+}
+/* #endregion */
+
+/* #region Header */
+.header {
+}
+.header-nav {
+}
+.menu {
+}
+.menu-item {
+}
+.menu-link {
+  font-weight: 500;
+  line-height: 1.14;
+}
+.menu-link:hover,
+.menu-link:focus {
+  color: var(--cl-text-accent);
+}
+/* #endregion */
+
+/* #region Hero */
+.hero {
+  background-color: var(--cl-bg-dark--40);
+}
+.hero-title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  color: var(--cl-text-secondary);
+}
+.hero-link {
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.03em;
+  color: var(--cl-text-secondary);
+}
+.hero-link:hover,
+.hero-link:focus {
+  color: var(--cl-text-accent);
+}
+/* #endregion */
+
+/* #region Benefits */
+.benefits {
+  background: var(--cl-bg-surface-dark);
+}
+.benefits-list {
+}
+.benefits-item {
+}
+.benefits-caption {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--cl-text-secondary);
+}
+.benefits-text {
+  color: var(--cl-text-secondary--70);
+}
+/* #endregion */
+
+/* #region Ingredients */
+.ingredients {
+}
+.ingredients-title {
+}
+.ingredients-list {
+}
+.ingredients-item {
+}
+.ingredients-ill {
+}
+.ingredients-caption {
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+/* #endregion */
+
+/* #region Made */
+.made {
+}
+.made-img {
+}
+.made-right-side {
+  background-color: var(--cl-bg-light);
+}
+.made-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+.made-recipe {
+}
+.made-recipe-item {
+}
+/* #endregion */
+
+/* #region Products */
+.products {
+}
+.products-list {
+}
+.products-item {
+}
+.products-pic {
+}
+.products-caption {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+.products-type {
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--cl-text-primary--70);
+}
+.products-label {
+  font-weight: 600;
+  background-color: var(--cl-bg-dark--10);
+}
+/* #endregion */
+
+/* #region Bestsellers */
+.bestsellers {
+}
+.bestsellers-list {
+}
+.bestsellers-item {
+}
+.bestsellers-caption {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+/* #endregion */
+
+/* #region Reviews */
+.reviews {
+}
+.reviews-list {
+}
+.reviews-item {
+}
+.reviews-author {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  text-align: center;
+}
+.reviews-text {
+  text-align: center;
+  color: var(--cl-text-primary--70);
+}
+/* #endregion */
+
+/* #region Footer */
+.footer {
+  background: var(--cl-bg-surface-dark);
+}
+.footer-slogan {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.21;
+  color: var(--cl-text-secondary);
+}
+
+.footer-caption {
+  font-weight: 500;
+  color: var(--cl-text-secondary);
+}
+
+.contacts {
+}
+.contacts-list {
+}
+.contacts-item {
+}
+.contacts-link {
+  color: var(--cl-text-secondary);
+}
+.contacts-link:hover,
+.contacts-link:focus {
+  color: var(--cl-text-accent);
+}
+
+.footer-menu {
+  color: var(--cl-text-secondary);
+}
+/* #endregion */
