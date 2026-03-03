@@ -25,7 +25,7 @@ ul {
 
 .item {
   width: 160px;
-  height: 160px;
+  /* height: 160px; */
 
   background-color: lightgreen;
   color: darkgreen;
@@ -38,9 +38,66 @@ ul {
 
 /* #region Flexbox */
 .container {
-  min-height: 600px;
+  /* --items: 4;
+  --indent: 30px; */
+
+  /* min-height: 600px; */
+
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent); */
+  /* gap: 20px; */
+  /* column-gap: 24px;
+  row-gap: 48px; */
+  /* gap: 48px 24px; */
 
   /* Default properties */
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  /* align-items: stretch; */
+  /* flex-wrap: nowrap; */
+  /* align-content: stretch; */
+}
+.item {
+  /* width: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items)); */
+
+  /* Default properties */
+  /* flex-shrink: 1; */
+  /* flex-grow: 0; */
+  /* flex-basis: auto; */
+}
+/* #endregion */
+
+/* Flex card-set */
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+.card-set-item {
+  width: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
-/* #endregion */
+:root {
+  --items: 1;
+  --indent: 10px;
+}
+
+.contacts {
+  --items: 3;
+  --indent: 20px;
+}
+
+.about {
+  --items: 6;
+  --indent: 40px;
+  overflow-x: auto;
+
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  .card-set-item {
+    width: 300px;
+    flex-shrink: 0;
+  }
+}
