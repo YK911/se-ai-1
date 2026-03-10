@@ -722,3 +722,137 @@ img {
   color: var(--cl-text-secondary);
 }
 /* #endregion */
+
+/* #region Modal window */
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  /* top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%; */
+
+  background-color: rgba(46, 47, 66, 0.4);
+  backdrop-filter: blur(2px);
+
+  transition: var(--anim-slow);
+  transition-property: opacity, visibility;
+  transition-delay: 200ms;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.backdrop.is-open {
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+
+  transition-delay: 0ms;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-70%);
+  opacity: 0;
+
+  width: 517px;
+  min-height: 794px;
+  padding: 40px;
+  border-radius: 15px;
+  background: #fafafa;
+
+  transition: 200ms ease-out;
+  transition-property: transform, opacity;
+  transition-delay: 0ms;
+}
+.backdrop.is-open .modal {
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+
+  transition-delay: 500ms;
+}
+.modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--cl-btn-dark-text);
+  border: none;
+  background-color: transparent;
+  transition: color var(--anim-fast);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  color: var(--cl-btn-accent-bg);
+}
+.modal-btn-icon {
+  stroke: currentColor;
+}
+.modal-caption {
+  width: 298px;
+  margin-bottom: 40px;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.modal-form {
+}
+.modal-form-wrapper {
+  margin-bottom: 18px;
+}
+.modal-form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(64, 64, 64, 0.3);
+}
+.modal-form-field {
+  position: relative;
+}
+.modal-form-input {
+  width: 100%;
+  height: 68px;
+  padding: 22px 62px;
+
+  color: #404040;
+
+  outline: transparent;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 13px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.03);
+
+  transition: var(--anim-fast);
+  transition-property: border-color;
+}
+.modal-form-input:focus {
+  border-color: #fd9222;
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  stroke: currentColor;
+  pointer-events: none;
+
+  transition: var(--anim-fast);
+  transition-property: stroke;
+}
+.modal-form-input:focus + .modal-form-icon {
+  stroke: #fd9222;
+}
+/* #endregion */
+/* dialog::backdrop {
+  background-color: rgba(46, 47, 66, 0.4);
+  backdrop-filter: blur(2px);
+} */
