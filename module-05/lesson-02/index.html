@@ -660,20 +660,24 @@
             </li>
           </ul>
 
-          <form name="subscribe-form">
-            <label>
-              Email
-              <input type="email" />
+          <form class="footer-form" name="subscribe-form">
+            <label class="footer-form-field">
+              <span class="visually-hidden">Email</span>
+              <input
+                class="footer-form-input"
+                type="email"
+                placeholder="Enter your email"
+              />
             </label>
 
-            <button type="submit">Send</button>
+            <button class="btn btn-accent" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
     </footer>
 
     <!-- Modal window -->
-    <div class="backdrop is-open">
+    <div class="backdrop">
       <div class="modal">
         <button class="modal-btn" type="button">
           <svg class="modal-btn-icon" width="28" height="28">
@@ -687,43 +691,60 @@
 
         <form class="modal-form" name="review-form">
           <div class="modal-form-wrapper">
-            <label class="modal-form-label" for="username">Name</label>
+            <label class="modal-form-label" for="user-name">Name</label>
             <div class="modal-form-field">
               <input
                 class="modal-form-input"
                 type="text"
-                id="username"
-                name="username"
+                id="user-name"
+                name="user-name"
+                required
+                pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+                title="Username must contains two words separated by space"
+                placeholder="&nbsp;"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#person"></use>
               </svg>
+              <svg class="modal-form-icon error" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
+              </svg>
+              <span class="error-message">
+                Username must contains two words separated by space
+              </span>
             </div>
           </div>
 
           <div class="modal-form-wrapper">
-            <label class="modal-form-label" for="useremail">Email</label>
+            <label class="modal-form-label" for="user-email">Email</label>
             <div class="modal-form-field">
               <input
                 class="modal-form-input"
-                type="text"
-                id="useremail"
-                name="useremail"
+                type="email"
+                id="user-email"
+                name="user-email"
+                required
+                placeholder="&nbsp;"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#email"></use>
+              </svg>
+              <svg class="modal-form-icon error" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
               </svg>
             </div>
           </div>
 
           <div class="modal-form-wrapper">
-            <label class="modal-form-label" for="userphone">Phone number</label>
+            <label class="modal-form-label" for="user-phone">
+              Phone number
+            </label>
             <div class="modal-form-field">
               <input
                 class="modal-form-input"
                 type="text"
-                id="userphone"
-                name="userphone"
+                id="user-phone"
+                name="user-phone"
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#phone"></use>
@@ -731,37 +752,70 @@
             </div>
           </div>
 
+          <div class="modal-form-wrapper">
+            <label class="modal-form-label" for="user-comment"> Comment </label>
+            <textarea
+              class="modal-form-comment"
+              name="user-comment"
+              id="user-comment"
+              placeholder="Enter text"
+              rows="4"
+              required
+              minlength="10"
+              maxlength="2000"
+            ></textarea>
+          </div>
+
+          <!-- Version 1 - HW -->
+          <!-- <label class="modal-form-agreement">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              name="user-agreement"
+              value="false"
+              checked
+            />
+            <span class="modal-form-checkbox">
+              <svg class="modal-form-checkbox-icon" width="10" height="10">
+                <use href="./images/icons.svg#checkmark"></use>
+              </svg>
+            </span>
+            I accept the terms and conditions of the
+            <a
+              class="modal-form-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+          </label> -->
+
+          <!-- Version 2 -->
+          <label class="modal-form-agreement">
+            <input
+              class="custom-checkbox"
+              type="checkbox"
+              name="user-agreement"
+              value="false"
+              checked
+            />
+
+            I accept the terms and conditions of the
+            <a
+              class="modal-form-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+          </label>
+
+          <!-- <button class="btn btn-accent" type="submit" disabled>Send</button> -->
           <button class="btn btn-accent" type="submit">Send</button>
         </form>
       </div>
     </div>
-
-    <!-- <dialog id="modal">
-      <form name="review-form" autocomplete="off">
-        <label>
-          Name
-          <input type="text" minlength="3" required name="username" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="useremail" />
-        </label>
-
-        <button type="submit">Send</button>
-      </form>
-    </dialog> -->
-
-    <script>
-      console.log(document.forms);
-      console.log(document.forms["review-form"]);
-
-      openBtn.onclick = () => {
-        modal.showModal();
-      };
-
-      volumeInput.oninput = event => {
-        volumeValue.textContent = event.target.value;
-      };
-    </script>
   </body>
 </html>
