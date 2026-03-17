@@ -1,3 +1,12 @@
+.hide {
+  display: none;
+}
+/*
+Breakpoints:
+mobile - 375px
+tablet - 768px
+desktop - 1168px
+*/
 /* #region Variables */
 :root {
   /* Fonts */
@@ -114,28 +123,59 @@ img {
   overflow: hidden;
 }
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
+}
+@media only screen and (min-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .section {
+    padding: 60px 0;
+  }
 }
 .section-title {
-  width: 412px;
-  margin: 0 auto 50px;
-  font-size: 24px;
+  max-width: 283px;
+  margin: 0 auto 32px;
   font-weight: 600;
-  line-height: 1.16;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .section-title {
+    max-width: 412px;
+    margin: 0 auto 50px;
+    font-size: 24px;
+    line-height: 1.16;
+  }
 }
 .accent-text {
   color: var(--cl-text-accent);
 }
 .container {
-  max-width: 1168px;
-  padding: 0 16px;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
   margin: 0 auto;
 
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .container {
+    max-width: 1168px;
+    padding: 0 16px;
+  }
 }
 .btn {
   min-width: 144px;
@@ -427,21 +467,55 @@ img {
 
 /* #region Ingredients */
 .ingredients {
-  padding-top: 120px;
+  padding-top: 80px;
 }
-.ingredients-title {
+@media only screen and (min-width: 768px) {
+  .ingredients {
+    padding-top: 100px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .ingredients {
+    padding-top: 120px;
+  }
 }
 .ingredients-list {
+  --items: 1;
+  --indent-x: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .ingredients-list {
+    --items: 2;
+    --indent-x: 32px;
+    --indent-y: 32px;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .ingredients-list {
+    --items: 4;
+    --indent-x: 24px;
+  }
 }
 .ingredients-item {
   --icon-cl: var(--cl-bg-light);
 
   position: relative;
 
-  padding: 28px 23px;
+  padding: 32px 28px 28px;
+
   border-radius: 15px;
   background: var(--cl-bg-light);
   border: 1px solid transparent;
+}
+@media only screen and (max-width: 767.98px) {
+  .ingredients-item:nth-last-child(-n + 3) {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .ingredients-item {
+    padding: 28px 23px;
+  }
 }
 /* a * n + b */
 .ingredients-item:nth-child(2n) {
@@ -472,7 +546,13 @@ img {
   stroke: var(--icon-cl);
 }
 .ingredients-ill {
-  margin-bottom: 36px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 1168px) {
+  .ingredients-ill {
+    margin-bottom: 36px;
+  }
 }
 .ingredients-caption {
   font-weight: 600;
@@ -535,8 +615,21 @@ img {
 .products {
 }
 .products-list {
-  --indent-x: 24px;
-  --indent-y: 18px;
+  --items: 1;
+  --indent-x: 32px;
+  --indent-y: 32px;
+}
+@media only screen and (min-width: 768px) {
+  .products-list {
+    --items: 2;
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .products-list {
+    --items: 4;
+    --indent-x: 24px;
+    --indent-y: 18px;
+  }
 }
 .products-item {
   padding: 32px 20px;
