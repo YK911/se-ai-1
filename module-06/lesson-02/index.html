@@ -27,13 +27,18 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
     />
-
+    <!-- For project -->
+    <!-- <link rel="preconnect" href="https://github.com/" /> -->
+    <link
+      rel="preload"
+      href="https://github.com/username/repo-name/images/hero/img.jpg"
+    />
     <!-- Customs CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <!-- #region Header -->
-    <header class="header hide" id="home">
+    <header class="header" id="home">
       <div class="container">
         <nav class="header-nav">
           <a class="logo" href="index.html">
@@ -42,10 +47,19 @@
               class="logo-icon"
               src="./images/icons/logo.svg"
               alt="Site logo: chocolate"
-              width="24"
-              height="24"
+              width="21"
+              height="21"
             />
           </a>
+          <button
+            class="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu button"
+          >
+            <svg class="mobile-menu-btn-icon" width="28" height="28">
+              <use href="./images/icons.svg#burger-menu"></use>
+            </svg>
+          </button>
           <ul class="header-menu menu">
             <li class="menu-item">
               <a class="menu-link current" href="#home">Home</a>
@@ -105,7 +119,7 @@
 
     <main>
       <!-- #region Hero section -->
-      <section class="hero hide">
+      <section class="hero">
         <div class="container">
           <div class="hero-wrapper">
             <h1 class="hero-title">
@@ -198,10 +212,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-1.png"
+                srcset="
+                  ./images/ingredients/img-1@1x.png 1x,
+                  ./images/ingredients/img-1@2x.png 2x
+                "
+                src="./images/ingredients/img-1@1x.png"
                 alt="MILK CHOCOLATE"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <p class="ingredients-caption">MILK CHOCOLATE</p>
             </li>
@@ -213,10 +232,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-2.png"
+                srcset="
+                  ./images/ingredients/img-2@1x.png 1x,
+                  ./images/ingredients/img-2@2x.png 2x
+                "
+                src="./images/ingredients/img-2@1x.png"
                 alt="MILK CHOCOLATE"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <p class="ingredients-caption">MILK</p>
             </li>
@@ -228,10 +252,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-3.png"
+                srcset="
+                  ./images/ingredients/img-3@1x.png 1x,
+                  ./images/ingredients/img-3@2x.png 2x
+                "
+                src="./images/ingredients/img-3@1x.png"
                 alt="NUTS"
-                width="214"
-                height="160"
+                width="236"
+                height="176"
+                loading="lazy"
               />
               <p class="ingredients-caption">NUTS</p>
             </li>
@@ -243,10 +272,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-4.png"
+                srcset="
+                  ./images/ingredients/img-4@1x.png 1x,
+                  ./images/ingredients/img-4@2x.png 2x
+                "
+                src="./images/ingredients/img-4@1x.png"
                 alt="SEMI - SWEET CHOCOLATE"
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <p class="ingredients-caption">SEMI - SWEET CHOCOLATE</p>
             </li>
@@ -258,10 +292,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-5.png"
+                srcset="
+                  ./images/ingredients/img-5@1x.png 1x,
+                  ./images/ingredients/img-5@2x.png 2x
+                "
+                src="./images/ingredients/img-5@1x.png"
                 alt="CACAO"
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <p class="ingredients-caption">CACAO</p>
             </li>
@@ -273,10 +312,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-6.png"
+                srcset="
+                  ./images/ingredients/img-6@1x.png 1x,
+                  ./images/ingredients/img-6@2x.png 2x
+                "
+                src="./images/ingredients/img-6@1x.png"
                 alt="RASPBERRY"
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <p class="ingredients-caption">RASPBERRY</p>
             </li>
@@ -288,10 +332,15 @@
               </button>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-7.png"
+                srcset="
+                  ./images/ingredients/img-7@1x.png 1x,
+                  ./images/ingredients/img-7@2x.png 2x
+                "
+                src="./images/ingredients/img-7@1x.png"
                 alt="COCONUT OIL"
                 width="214"
                 height="160"
+                loading="lazy"
               />
               <p class="ingredients-caption">COCONUT OIL</p>
             </li>
@@ -354,13 +403,46 @@
           </h2>
           <ul class="products-list card-set">
             <li class="products-item card-set-item">
-              <img
-                class="products-pic"
-                src="./images/products/img-1.jpg"
-                alt="Orange"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1168px)"
+                  srcset="
+                    ./images/products/img-1_desk.avif    1x,
+                    ./images/products/img-1_desk@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  media="(min-width: 1168px)"
+                  srcset="
+                    ./images/products/img-1_desk.jpg    1x,
+                    ./images/products/img-1_desk@2x.jpg 2x
+                  "
+                  type="image/jpeg"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/products/img-1_tab.jpg    1x,
+                    ./images/products/img-1_tab@2x.jpg 2x
+                  "
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/products/img-1_mob.jpg    1x,
+                    ./images/products/img-1_mob@2x.jpg 2x
+                  "
+                />
+                <img
+                  class="products-pic"
+                  src="./images/products/img-1_mob.jpg"
+                  alt="Orange"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-caption">Orange</h3>
               <p class="products-type">Dark chocolate</p>
               <button class="products-label" type="button">45 UAH</button>
@@ -372,6 +454,7 @@
                 alt="Apple&Cranberry"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Apple&Cranberry</h3>
               <p class="products-type">Milk chocolate</p>
@@ -384,6 +467,7 @@
                 alt="Lime&Sea salt"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Lime&Sea salt</h3>
               <p class="products-type">Dark chocolate</p>
@@ -396,6 +480,7 @@
                 alt="Pineapple"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Pineapple</h3>
               <p class="products-type">Dark chocolate</p>
@@ -408,6 +493,7 @@
                 alt="Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Classic</h3>
               <p class="products-type">Milk chocolate</p>
@@ -420,6 +506,7 @@
                 alt="Honey"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Honey</h3>
               <p class="products-type">Milk chocolate</p>
@@ -432,6 +519,7 @@
                 alt="Roasted fruits"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Roasted fruits</h3>
               <p class="products-type">Dark chocolate</p>
@@ -444,6 +532,7 @@
                 alt="Classic"
                 width="230"
                 height="201"
+                loading="lazy"
               />
               <h3 class="products-caption">Classic</h3>
               <p class="products-type">White chocolate</p>
@@ -815,6 +904,75 @@
           <!-- <button class="btn btn-accent" type="submit" disabled>Send</button> -->
           <button class="btn btn-accent" type="submit">Send</button>
         </form>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="backdrop">
+      <div class="mobile-menu">
+        <button
+          class="mobile-menu-btn"
+          type="button"
+          aria-label="Close menu button"
+        >
+          <svg class="mobile-menu-btn-icon" width="28" height="28">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+
+        <ul class="mobile-nav">
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link current" href="#">Home</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link" href="#">How it’s made?</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link" href="#">Chocolate is loved</a>
+          </li>
+        </ul>
+
+        <ul class="socials socials-light">
+          <li class="socials-item">
+            <a
+              class="socials-link"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to facebook.com"
+            >
+              <svg class="socials-icon" width="24" height="24">
+                <use href="./images/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials-item">
+            <a
+              class="socials-link"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to instagram.com"
+            >
+              <svg class="socials-icon" width="24" height="24">
+                <use href="./images/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials-item">
+            <a
+              class="socials-link"
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to twitter.com"
+            >
+              <svg class="socials-icon" width="24" height="24">
+                <use href="./images/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
